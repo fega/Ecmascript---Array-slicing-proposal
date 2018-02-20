@@ -4,6 +4,14 @@ A proposal to a better array Slicing inspired in Python notation
 JS need a better way to transversing arraylike structures
 ## Solution
 Inspired (but not limited) in python notation, add an `slicing notation`
+in the following form
+```
+arr[start:end:step]
+```
+Where 
+ - *start* is the start index of the slice
+ - *end* is the end index of the slice (and at difference of python it includes that index)
+ - *step* is a parameter to "jump" indexes, by default is 1, and throw an error if is 0
 ## Applications
 
 ### Get first part of Array
