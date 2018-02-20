@@ -55,7 +55,7 @@ const mat[1::2][0::2]=// [[1,1]
 ## Other ideas:
 
 ### Spread Operator?
-for me this is ugly..
+for me this is ugly... and unconvenient
 ```
 const arr=[0,1,2,3,4,5];
            ^ ^ ^
@@ -110,4 +110,15 @@ arr[arr:] //   [[0,1,2,3,4,5],
           //    [4,5],
           //    [5],
           //    ]
+```
+### Pass [::] as a parameter
+
+
+```
+const arr=[0,1,2,3,4,5];
+function getSlice(a,slice){
+  return a[slice]
+}
+getSlice(arr,[0:1]) // [0,1]
+getSlice(arr,[0:5)) // [0,1,2,3,4]
 ```
