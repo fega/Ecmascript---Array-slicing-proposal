@@ -116,7 +116,7 @@ const arr=[0,1,2,3,4,5];
 arr[::[1,-1]] // throws Error
 ```
 ## Dark hole of crazyness
-### Allow two parameters in first "parameter"
+### Allow Arrays in first "parameter"
 Hahaha, this is so much for me
 
 ```
