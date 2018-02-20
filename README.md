@@ -9,9 +9,18 @@ in the following form
 arr[start:end:step]
 ```
 Where 
- - *start* is the start index of the slice
- - *end* is the end index of the slice (and at difference of python it includes that index)
+ - *start* is the start index of the slice, default is Zero
+ - *end* is the end index of the slice (and at difference of python it includes that index), default is arr.length
  - *step* is a parameter to "jump" indexes, by default is 1, and throw an error if is 0
+
+All of three parameters are optional and the second `:` is only needed if a step is provided:
+
+```
+arr[:] valid
+arr[::] valid?
+arr[undefined:undefined:undefined] valid
+```
+
 ## Applications
 
 ### Get first part of Array
@@ -42,6 +51,7 @@ arr[1:2]=arr[1:2:-1] // arr= [0,2,1,3,4,5]
 ```
 
 ### Nested Arrays
+This brigs a powerful way to transversing any Matrix of data
 
 ```
 const mat=[[1,2,3,4,5],
@@ -129,4 +139,9 @@ function getSlice(a,slice){
 }
 getSlice(arr,[0:1]) // [0,1]
 getSlice(arr,[0:5)) // [0,1,2,3,4]
+```
+### a map "parameter"
+```
+const arr=[0,1,2,3,4,5];
+arr[:::(val,index,arr,start,stop,step)=>{return 1}] //[1,1,1,1,1,1]
 ```
