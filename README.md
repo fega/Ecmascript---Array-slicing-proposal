@@ -79,7 +79,7 @@ arr [::(value,index,arr,start,end)=>{return something}]
 **Problem:** could lead in an infinite bucle
 
 ### Allow array array in third parameter
-with a serie of steps, if the step is negative, be back from the las returned item
+with a serie of steps, if the step is negative, be back from the las returned item, when array in parameter ends, restart secuence
 
 ```
 const arr=[0,1,2,3,4,5,6,7];
@@ -96,4 +96,18 @@ arr[::[1,-1]] // ?
 ```
 const arr=[0,1,2,3,4,5];
 arr[::[1,-1]] // throws Error
+```
+## Dark hole of crazyness
+### Allow two parameters in first "parameter"
+Hahaha, this is so much for me
+
+```
+const arr=[0,1,2,3,4,5];
+arr[arr:] //   [[0,1,2,3,4,5],
+          //    [1,2,3,4,5],
+          //    [2,3,4,5],
+          //    [3,4,5],
+          //    [4,5],
+          //    [5],
+          //    ]
 ```
