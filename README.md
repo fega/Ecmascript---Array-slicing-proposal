@@ -1,7 +1,6 @@
 # Ecmascript-Array-slicing-proposal
-A proposal to a better array Slicing inspired in Python notation
-## Problem
-JS need a better way to transversing arraylike structures
+This proposal introduces a new way for transversing arraylike structures
+
 ## Solution
 Inspired (but not limited) in the python notation, add an `slicing notation`
 in the following form
@@ -32,6 +31,7 @@ arr[1:4]; // [1,2,3,4];
 ```
 
 ### Get first part of Array
+Allowing only the use of some of the parameters
 ```
 const arr=[0,1,2,3,4,5];
 
