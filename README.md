@@ -1,15 +1,15 @@
-# Ecmascript-Array-slicing-proposal
+# Ecmascript Array slicing proposal
 This proposal introduces a new way for transversing arraylike structures
 
 ## Solution
-Inspired (but not limited) in the python notation, add an `slicing notation`
+Inspired (but not limited) in the python notation, add a `slicing notation`
 in the following form
 ```
 arr[start:end:step]
 ```
 Where 
  - *start* is the start index of the slice, default is Zero
- - *end* is the end index of the slice (and at difference of python it includes that index), default is arr.length
+ - *end* is the end index of the slice (and different of python it includes that index), default is arr.length
  - *step* is a parameter to "jump" indexes, by default is 1, and throw an error if is 0
 
 All of three parameters are optional and the second `:` is only needed if a step is provided:
