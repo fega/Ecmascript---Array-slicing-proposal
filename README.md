@@ -3,7 +3,7 @@ A proposal to a better array Slicing inspired in Python notation
 ## Problem
 JS need a better way to transversing arraylike structures
 ## Solution
-Inspired (but not limited) in python notation, add an `slicing notation`
+Inspired (but not limited) in the python notation, add an `slicing notation`
 in the following form
 ```
 arr[start:end:step]
@@ -23,23 +23,47 @@ arr[undefined:undefined:undefined] valid
 
 ## Applications
 
-### Get first part of Array
-### Get last part of Array
-### Get even indexes
-### Get odd indexes
-
-### Intuitive array slicing
+### Intuitive array 
+The most understandable use case
 ```
 const arr=[0,1,2,3,4,5];
 
-const slice=arr[1:4]; // [1,2,3,4];
+arr[1:4]; // [1,2,3,4];
+```
+
+### Get first part of Array
+```
+const arr=[0,1,2,3,4,5];
+
+arr[:1] // [0,1]
+```
+### Get last part of Array
+```
+const arr=[0,1,2,3,4,5];
+
+arr[4:] // [4,5]
+```
+
+### Get even indexes
+```
+const arr=[0,1,2,3,4,5];
+
+arr[2::2] // [2,4]
+```
+
+### Get odd indexes
+```
+const arr=[0,1,2,3,4,5];
+
+arr[1::2] // [1,3,5]
 ```
 
 ### Array Reversing
 ```
 const arr=[0,1,2,3,4,5];
 
-const slice=arr[1:4:-1]; // [4,3,2,1];
+arr[1:4:-1]; // [4,3,2,1];
+arr[::-1] // [5,4,3,2,1,0]
 ```
 
 ### variable swaping
@@ -77,7 +101,7 @@ for me this is ugly... and unconvenient
 ```
 const arr=[0,1,2,3,4,5];
            ^ ^ ^
-           | | stop
+           | | step
            | end
            start
 arr[...arr] // []
