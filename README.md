@@ -1,7 +1,7 @@
 # Ecmascript Array slicing proposal
 This proposal introduces a new way for transversing arraylike structures
 ## Problem and solution
-In the current ES specification the different ways to get subsets of arrays are verbose especially if your desire is to get non-sequential subsets of them ie:
+In the current ES specification the different ways to get subsets of arrays are verbose, especially if your desire is to get non-sequential subsets of them ie:
 ```
 const arr=[0,1,2,3,4,5];
 
