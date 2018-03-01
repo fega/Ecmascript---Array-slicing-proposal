@@ -1,13 +1,57 @@
 # Ecmascript Array slicing proposal
 This proposal introduces a new way for transversing arraylike structures
+## Problem and solution
+In the current ES specification the different ways to get subsets of arrays are verbose especially if your desire is to get non-sequential subsets of them ie:
+```
+const arr=[0,1,2,3,4,5];
 
-## Solution
-Inspired (but not limited) in the python notation, add a `slicing notation`
-in the following form
+// get a secuential slice
+arr.slice(1,4); // [1,2,3,4];
+
+// but what if you want a non-sequential slice?
+// taken from https://codereview.stackexchange.com/questions/57268/implementing-python-like-slice-in-javascript
+
+function slice(collection, start, end, step) {
+    var length = collection.length,
+        isString = typeof collection == "string", // IE<9 have issues with accessing strings by indicies ("str"[0] === undefined)
+        result = [];
+    if (isString) {
+        collection = collection.split("");
+    }
+    if (start == null) {
+        start = 0;
+    } else if (start < 0) {
+        start = length + start;
+    }
+    if (end == null || end > length) {
+        end = length;
+    } else if (end < 0) {
+        end = length + end;
+    }
+    if (step == null) {
+        step = 1;
+    } else if (step === 0) {
+        throw "Slice step cannot be zero";
+    }
+    if (step > 0) {
+        for (; start < end; start += step) {
+            result.push(collection[start]);
+        }
+    } else {
+        for (end -= 1; start <= end; end += step) {
+            result.push(collection[end]);
+        }
+    }
+    // Return a string for input strings otherwise an array
+    return isString ? result.join("") : result;
+}
+slice(arr,1,6,2) // [1,3,5]
+```
+Inspired (but not limited) in the python notation, this proposal aims to address this in a mover convenient way adding a `slicing notation`, in the following form
 ```
 arr[start:end:step]
 ```
-Where 
+**Where**
  - *start* is the start index of the slice, default is Zero
  - *end* is the end index of the slice (and different of python it includes that index), default is arr.length
  - *step* is a parameter to "jump" indexes, by default is 1, and throw an error if is 0
