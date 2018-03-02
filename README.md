@@ -47,7 +47,7 @@ function slice(collection, start, end, step) {
 }
 slice(arr,1,6,2) // [1,3,5]
 ```
-Inspired (but not limited) in the python notation, this proposal aims to address this in a mover convenient way adding a `slicing notation`, in the following form
+Inspired (but not limited) in the python notation, this proposal aims to address this in a more convenient way adding a `slicing notation`, in the following form
 ```
 arr[start:end:step]
 ```
