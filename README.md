@@ -5,7 +5,7 @@ In the current ES specification the different ways to get subsets of arrays are 
 ```
 const arr=[0,1,2,3,4,5];
 
-// get a secuential slice
+// get a sequential slice
 arr.slice(1,4); // [1,2,3,4];
 
 // but what if you want a non-sequential slice?
